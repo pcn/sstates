@@ -1,4 +1,4 @@
 # Install packages
 
 zookeeper:
-  package.installed
+  pkg.installed
