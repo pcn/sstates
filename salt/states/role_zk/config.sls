@@ -1,1 +1,15 @@
 # Configure zookeeper
+/etc/zookeeper/salt-conf:
+  file.directory:
+    - user: root
+    - group: root
+    - mode: 0755
+
+/etc/zookeeper/salt-conf/myid:
+  file.managed:
+    - template: jinja
+    - source: salt:///role_zk/templates/myid.conf.j2
+    - user: root
+    - group: root
+    - mode: 0444
+      
