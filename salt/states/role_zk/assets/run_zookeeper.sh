@@ -7,7 +7,7 @@
 
 $JAVA \
   -Dzookeeper.log.dir=$ZOO_LOG_DIR \
-  -Dzookeeper.root.logger=$ZOO_LOG4J_PROP \    
+  -Dzookeeper.root.logger=$ZOO_LOG4J_PROP \
   -cp "$CLASSPATH" \
   $JAVA_OPTS \
   -Xlog:gc=info \
