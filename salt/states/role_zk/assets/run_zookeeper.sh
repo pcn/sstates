@@ -9,7 +9,7 @@ $JAVA \
   -ea \
   -cp $CLASSPATH \
   $JAVA_OPTS \
-  -Xloggc:/var/log/zookeeper/gc.log \
+  -Xlog:gc=info \
   -Dcom.sun.management.jmxremote.port=2191 \
   -Dcom.sun.management.jmxremote.authenticate=false \
   -Dcom.sun.management.jmxremote.ssl=false \
