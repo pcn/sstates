@@ -3,7 +3,7 @@
 
 # This is to allow systemd to start zookeeper on a server.
 
-. /etc/zookeper/conf/environment
+. /etc/zookeeper/conf/environment
 
 $JAVA \
   -ea \
