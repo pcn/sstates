@@ -10,9 +10,6 @@ $JAVA \
   -cp $CLASSPATH \
   $JAVA_OPTS \
   -Xloggc:/var/log/zookeeper/gc.log \
-  -XX:+UseGCLogFileRotation \
-  -XX:NumberOfGCLogFiles=3 \
-  -XX:GCLogFileSize=10M \
   -Dcom.sun.management.jmxremote.port=2191 \
   -Dcom.sun.management.jmxremote.authenticate=false \
   -Dcom.sun.management.jmxremote.ssl=false \
