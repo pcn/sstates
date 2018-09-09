@@ -52,4 +52,4 @@
     - name: zk-salt-conf
     - link: /etc/alternatives/zookeeper-conf
     - path: /etc/zookeeper/salt-conf
-    - priority: 1000
+    - priority: 1001
