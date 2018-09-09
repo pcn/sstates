@@ -4,7 +4,7 @@ zookeeper:
   pkg.installed
 
 
-/opt/appoptics/etc/plugins.d/zookeeper.yaml
+/opt/appoptics/etc/plugins.d/zookeeper.yaml:
   file.managed:
     - mode: 0444
     - user: root
