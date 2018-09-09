@@ -6,10 +6,9 @@
 . /etc/zookeeper/conf/environment
 
 $JAVA \
-  -ea \
   -Dzookeeper.log.dir=$ZOO_LOG_DIR \
   -Dzookeeper.root.logger=$ZOO_LOG4J_PROP \    
-  -cp $CLASSPATH \
+  -cp "$CLASSPATH" \
   $JAVA_OPTS \
   -Xlog:gc=info \
   -Dcom.sun.management.jmxremote.port=2191 \
