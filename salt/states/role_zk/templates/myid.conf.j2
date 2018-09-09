@@ -1,1 +1,1 @@
-{{ salt['pillar.get']('zk_servers:' ~ grains['id'] ~ 'myid', "You don't hava a pillar defined for this host") }}
+{{ salt['pillar.get']('zk_servers:' ~ grains['id'] ~ ':myid', "You don't hava a pillar defined for this host") }}
