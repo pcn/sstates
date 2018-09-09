@@ -66,8 +66,8 @@ zoo_cfg_ports:
 zookeeper_client_port: {{ client_port }}
 
 appoptics:
-  enabled_plugins:
-    zookeeper:
+  zookeeper:
+    plugin:
       collector:
         zookeeper:
           all:
@@ -80,16 +80,3 @@ appoptics:
       load:
         plugin: snap-plugin-collector-bridge-zookeeper
         task: task-bridge-zookeeper.yaml
-  enabled_tasks:
-    zookeeper:
-      version: 1
-      schedule:
-        # Run every minute
-        type: cron
-        interval: "0 * * * * *"
-      workflow:
-        collect:
-          metrics:
-            /zookeeper/*/all: {}
-          publish:
-            - plugin_name: publisher-appoptics
