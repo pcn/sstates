@@ -25,7 +25,7 @@
 /etc/zookeeper/salt-conf/environment:
   file.managed:
     - template: jinja
-    - source: salt:///role_zk/template/environment.j2
+    - source: salt:///role_zk/templates/environment.j2
     - user: root
     - group: root
     - mode: 0444
@@ -33,7 +33,7 @@
 /etc/zookeeper/salt-conf/log4j.properties:
   file.managed:
     - template: jinja
-    - source: salt:///role_zk/template/log4j.properties.j2
+    - source: salt:///role_zk/templates/log4j.properties.j2
     - user: root
     - group: root
     - mode: 0444
