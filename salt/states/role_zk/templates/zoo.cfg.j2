@@ -24,7 +24,7 @@ clientPort=2181
 #server.3=zookeeper3:2888:3888
 
 {% for val in salt['pillar.get']('zk_servers').values() %}
-server.{{ val['id'] }}={{ val['ip'] }}:2888:3888
+server.{{ val['myid'] }}={{ val['ip'] }}:2888:3888
 {% endfor %}
 
 
