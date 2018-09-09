@@ -12,4 +12,13 @@
     - user: root
     - group: root
     - mode: 0444
+
+
+/etc/zookeeper/salt-conf/zoo.cfg:
+  file.managed:
+    - template: jinja
+    - source: salt:///role_zk/templates/zoo.cfg.j2
+    - user: root
+    - group: root
+    - mode: 0444
       
