@@ -53,3 +53,20 @@
     - link: /etc/alternatives/zookeeper-conf
     - path: /etc/zookeeper/salt-conf
     - priority: 1001
+
+
+/usr/local/bin/run_zookeeper.sh:
+  file.managed:
+    - source: salt://role_zk/assets/run_zookeeper.sh
+    - user: root
+    - group: root
+    - mode: 0555
+    - failhard: True
+
+/etc/systemd/system/zookeeper.service:
+  file.managed:
+    - source: salt://role_zk/assets/zookeeper.service
+    - mode: 0444
+    - user: root
+    - group: root
+    - failhard: True
