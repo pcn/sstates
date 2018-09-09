@@ -7,7 +7,7 @@ appoptics:
   version: '2.0.0-ao1.1849'
   config_base: '/opt/appoptics/etc'
   plugin_config_path: '/opt/appoptics/etc/plugins.d'
-  plugin_config_path: '/opt/appoptics/etc/tasks.d'
+  task_config_path: '/opt/appoptics/etc/tasks.d'
   fqdn_lookup: true
   interval: 60
 
