@@ -21,4 +21,35 @@
     - user: root
     - group: root
     - mode: 0444
-      
+
+/etc/zookeeper/salt-conf/environment:
+  file.managed:
+    - template: jinja
+    - source: salt:///role_zk/template/environment.j2
+    - user: root
+    - group: root
+    - mode: 0444
+
+/etc/zookeeper/salt-conf/log4j.properties:
+  file.managed:
+    - template: jinja
+    - source: salt:///role_zk/template/log4j.properties:.j2
+    - user: root
+    - group: root
+    - mode: 0444
+
+
+/etc/zookeeper/salt-conf/configuration.xsl:
+  file.managed:
+    - source: salt:///role_zk/assets/configuration.xsl
+    - user: root
+    - group: root
+    - mode: 0444
+
+
+/etc/zookeeper/conf:
+  alternatives.install:
+    - name: zk_config
+    - link: /etc/zookeeper/conf
+    - path: /etc/zookeeper/salt-conf
+    - priority: 1000
