@@ -1,14 +1,13 @@
 # Something something here
 
 appoptics:
-  email: ''
+  email: "something"
   repo_url: 'https://packagecloud.io/AppOptics'
   repo_base: 'appoptics-snap'
   version: '2.0.0-ao1.1849'
   config_base: '/opt/appoptics/etc'
   plugin_config_path: '/opt/appoptics/etc/plugins.d'
   plugin_config_path: '/opt/appoptics/etc/tasks.d'
-  hostname: nil
   fqdn_lookup: true
   interval: 60
 
