@@ -67,17 +67,16 @@ zookeeper_client_port: {{ client_port }}
 
 appoptics:
   configured_plugins:
-    - zookeeper:
-        plugin:
-          collector:
-            zookeeper:
-              all:
-                ## An array of address to gather stats about. Specify an ip or hostname
-                ## with port. ie localhost:2181, 10.0.0.1:2181, etc.
-                ## If no servers are specified, then localhost is used as the host.
-                ## If no port is specified, 2181 is used
-                # servers: "10.0.0.1:2181,10.0.0.2:2181,10.0.0.3:2181"
-                # servers: ":2181"
-          load:
-            plugin: snap-plugin-collector-bridge-zookeeper
-            task: task-bridge-zookeeper.yaml
+    zookeeper:
+      collector:
+        zookeeper:
+          all:
+            ## An array of address to gather stats about. Specify an ip or hostname
+            ## with port. ie localhost:2181, 10.0.0.1:2181, etc.
+            ## If no servers are specified, then localhost is used as the host.
+            ## If no port is specified, 2181 is used
+            # servers: "10.0.0.1:2181,10.0.0.2:2181,10.0.0.3:2181"
+            # servers: ":2181"
+      load:
+        plugin: snap-plugin-collector-bridge-zookeeper
+        task: task-bridge-zookeeper.yaml
