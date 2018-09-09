@@ -7,6 +7,8 @@
 
 $JAVA \
   -ea \
+  -Dzookeeper.log.dir=$ZOO_LOG_DIR \
+  -Dzookeeper.root.logger=$ZOO_LOG4J_PROP \    
   -cp $CLASSPATH \
   $JAVA_OPTS \
   -Xlog:gc=info \
@@ -15,3 +17,5 @@ $JAVA \
   -Dcom.sun.management.jmxremote.ssl=false \
   $ZOOMAIN \
   $ZOOCFG
+
+
