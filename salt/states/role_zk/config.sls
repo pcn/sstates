@@ -50,6 +50,6 @@
 /etc/zookeeper/conf:
   alternatives.install:
     - name: zk_config
-    - link: /etc/zookeeper/conf
+    - link: /etc/alternatives/zookeeper-conf
     - path: /etc/zookeeper/salt-conf
     - priority: 1000
