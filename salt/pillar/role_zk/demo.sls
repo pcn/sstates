@@ -77,6 +77,7 @@ appoptics:
             ## If no port is specified, 2181 is used
             # servers: "10.0.0.1:2181,10.0.0.2:2181,10.0.0.3:2181"
             # servers: ":2181"
+            grpc_timeout: 30
       load:
         plugin: snap-plugin-collector-bridge-zookeeper
         task: task-bridge-zookeeper.yaml
