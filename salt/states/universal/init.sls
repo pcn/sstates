@@ -2,4 +2,3 @@
 include:
   - appoptics
   - universal.papertrail
-  - syslog_ng
