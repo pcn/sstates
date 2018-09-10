@@ -2,3 +2,6 @@
 include:
   - appoptics
   - universal.papertrail
+
+virt-what:
+  pkg.installed
