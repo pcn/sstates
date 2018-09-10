@@ -67,10 +67,11 @@ def srvr(full=False):
     try:
         result = _sendsrvr()
     except socket.error, se:
-        return ({ __salt__['grains.get']('id'): {
-            "Socket error: {}".format(str(se)),
-            "result": False
-        }},)
+        return (
+            { __salt__['grains.get']('id'): {
+                "Socket error:": str(se),
+                "result": False
+            }},)
     
     if full:
         return result
