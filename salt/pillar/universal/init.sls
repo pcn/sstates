@@ -3,6 +3,9 @@
 syslog_ng:
   port: 27377
   destination: logs7.papertrailapp.com
+  watched_files:
+    - filename: /var/log/salt/minion
+      short_name: minion
 
 appoptics:
   email: "something"

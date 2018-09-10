@@ -65,6 +65,13 @@ zoo_cfg_ports:
 
 zookeeper_client_port: {{ client_port }}
 
+syslog_ng:
+  watched_files:
+    - filename: /var/log/zookeeper/zookeeper.log
+      shortname: zookeeper
+    - filename: /var/log/zookeeper/gc.log
+      shortname: gc
+
 appoptics:
   configured_plugins:
     zookeeper:

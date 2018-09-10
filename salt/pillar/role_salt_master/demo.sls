@@ -1,4 +1,11 @@
 # Put anything the saltmaster needs here
+
+syslog_ng:
+  watched_files:
+    - filename: /var/log/salt/master
+      short_name: master
+
+
 engines_dirs:
   - /srv/formulas/dispatchapong-formula/engines
   
