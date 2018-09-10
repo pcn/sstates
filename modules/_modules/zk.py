@@ -74,5 +74,14 @@ def srvr(full=False):
             }},)
     
     if full:
-        return result
-    return "\n".join([z for z in result.split("\n") if 'Zoo' in z or 'Mode' in z])
+        return ({
+            __salt__['grains.get']('id'): {
+                "data": result,
+                "result": True
+            }},)
+    
+    return ({
+        __salt__['grains.get']('id'): {
+            "data": "\n".join([z for z in result.split("\n") if 'Zoo' in z or 'Mode' in z]),
+            "result": True
+            }},)
