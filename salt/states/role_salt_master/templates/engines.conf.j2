@@ -2,6 +2,5 @@ engines_dirs: {{ salt['pillar.get']('engines_dirs') | yaml}}
 
 engines:
 {% for engine_name, engine_data in salt['pillar.get']('engines').items() %}
-  - {{ engine_name }}:
-    {{ engine_data | yaml }}
+  - {{ engine_name }}: {{ engine_data | yaml }}
 {% endfor %}
