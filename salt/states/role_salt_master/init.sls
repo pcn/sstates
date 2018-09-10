@@ -1,3 +1,6 @@
+include:
+  - role_salt_master.engines
+
 /srv/salt:
   file.symlink:
     - target: /home/ubuntu/sstates/salt/states
