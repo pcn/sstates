@@ -67,21 +67,18 @@ def srvr(full=False):
     try:
         result = _sendsrvr()
     except socket.error, se:
-        return (
-            { __salt__['grains.get']('id'): {
-                "Socket error:": str(se),
-                "result": False
-            }},)
+        return {
+            "Socket error:": str(se),
+            "result": False
+        }
     
     if full:
-        return ({
-            __salt__['grains.get']('id'): {
-                "data": result,
-                "result": True
-            }},)
-    
-    return ({
-        __salt__['grains.get']('id'): {
-            "data": "\n".join([z for z in result.split("\n") if 'Zoo' in z or 'Mode' in z]),
+        return {
+            "data": result,
             "result": True
-            }},)
+        }
+    
+    return {
+        "data": "\n".join([z for z in result.split("\n") if 'Zoo' in z or 'Mode' in z]),
+        "result": True
+    }
