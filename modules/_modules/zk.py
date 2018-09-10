@@ -67,4 +67,4 @@ def srvr(zkminions="zk*", full=False):
     result = _sendsrvr()
     if full:
         return result
-    return "\n".join([z for z in result.split("\n") if 'Zoo' in resline or 'Mode' in resline])
+    return "\n".join([z for z in result.split("\n") if 'Zoo' in z or 'Mode' in z])
