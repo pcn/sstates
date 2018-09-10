@@ -1,4 +1,13 @@
 import json
+import socket
+
+def _sendsrvr():
+    s = socket.socket(socket.AF_INET)
+    s.connect(('localhost', 2181,))
+    s.send('srvr')
+    retdata = s.recv(1024)
+    s.close()
+    return retdata
 
 def srvr(zkminions="zk*", full=False):
     """Returns the output of the zookeeper "srvr" command.
@@ -49,9 +58,10 @@ def srvr(zkminions="zk*", full=False):
 
 
     """
-    cmdrun = __salt__['cmd.run']
+    # cmdrun = __salt__['cmd.run']
 
-    cmd = """echo srvr | nc 127.0.0.1 2181"""
+    # cmd = """echo srvr | nc 127.0.0.1 2181; echo srvr | nc 127.0.0.1 2181; """
 
-    result = cmdrun(cmd, python_shell=True)
-    return result
+    # result = cmdrun(cmd, python_shell=True)
+    
+    return _sendsrvr()
