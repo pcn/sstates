@@ -9,7 +9,7 @@ def _sendsrvr():
     s.close()
     return retdata
 
-def srvr(zkminions="zk*", full=False):
+def srvr(full=False):
     """Returns the output of the zookeeper "srvr" command.
 
     The default is to filter out everything except leader/follower data
@@ -67,7 +67,10 @@ def srvr(zkminions="zk*", full=False):
     try:
         result = _sendsrvr()
     except socket.error, se:
-        return "Socket error: {}".format(str(se))
+        return ({ __salt__['grains.get']('id'): {
+            "Socket error: {}".format(str(se)),
+            "result": False
+        },)
     
     if full:
         return result
