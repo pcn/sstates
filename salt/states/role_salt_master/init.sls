@@ -11,4 +11,8 @@
 /srv/formulas:
   file.symlink:
     - target: /home/ubuntu/sstates/formulas
-      
+
+/srv/modules:
+  file.symlink:
+    - target: /home/ubuntu/sstates/modules
+
