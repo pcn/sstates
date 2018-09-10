@@ -16,8 +16,8 @@ engines:
       aws_region: us-west-2
       it_failed: 'Oh no, that failed :scream:'
       it_worked: 'On your way :+1:'
-      log_follow_url: https://papertrailapp.com/groups/SOMEGROUP/events?q=saltmaster
-      slack_web_hook: 
-      sqs_queue_name: 
+      log_follow_url: https://papertrailapp.com/systems/saltmaster/events
+      slack_web_hook: "https://hooks.slack.com/services/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"
+      sqs_queue_name: arn:aws:sqs:us-east-2:005664742537:dispatchaping
 
 
