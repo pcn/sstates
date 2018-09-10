@@ -16,3 +16,7 @@
   file.symlink:
     - target: /home/ubuntu/sstates/modules
 
+
+python-boto3:
+  pkg.installed
+
