@@ -1,5 +1,5 @@
 # state for all of the crowd
 include:
   - appoptics
-  - universal.papertrail_certs
+  - universal.papertrail
   - syslog_ng
