@@ -51,12 +51,7 @@ def srvr(zkminions="zk*", full=False):
     """
     cmdrun = __salt__['cmd.run']
 
-    cmd_base = """echo srvr | nc 127.0.0.1 2181"""
+    cmd = """echo srvr | nc 127.0.0.1 2181"""
 
-    if full is False:
-        use_cmd = "{} | egrep '^(Zoo|Mode)'".format(cmd_base)
-    else:
-        use_cmd = cmd_base
-
-    result = cmdrun(use_cmd, python_shell=True)
+    result = cmdrun(cmd, python_shell=True)
     return result
