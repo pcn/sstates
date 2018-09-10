@@ -63,8 +63,12 @@ def srvr(zkminions="zk*", full=False):
     # cmd = """echo srvr | nc 127.0.0.1 2181; echo srvr | nc 127.0.0.1 2181; """
 
     # result = cmdrun(cmd, python_shell=True)
+
+    try:
+        result = _sendsrvr()
+    except socket.error, se:
+        return "Socket error: {}".format(str(se))
     
-    result = _sendsrvr()
     if full:
         return result
     return "\n".join([z for z in result.split("\n") if 'Zoo' in z or 'Mode' in z])

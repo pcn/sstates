@@ -24,3 +24,10 @@ def srvr_2(minion_id, slack_webhook_url=None, **kwargs):
     logging.info("Showing zk srvr status")
     srvr_result = client.cmd('zk*', 'zk.srvr', [])
     return (srvr_result,)
+
+def srvr_3(minion_id, slack_webhook_url=None, **kwargs):
+    client = salt.client.LocalClient()
+    logging.info("Showing zk srvr status")
+    srvr_result = client.cmd('zk*', 'zk.srvr', [])
+    return (srvr_result,)
+    
