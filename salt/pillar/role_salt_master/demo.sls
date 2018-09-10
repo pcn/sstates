@@ -12,7 +12,7 @@ engines_dirs:
 engines:
   dispatchapong:
     alert_mapping:
-      zk.followers.low: zkpong.srvr
+      zk.followers.low: zkpong.srvr_2
     aws_region: us-east-2
     it_failed: "Oh no, that failed :scream:"
     it_worked: "On your way :+1:"
