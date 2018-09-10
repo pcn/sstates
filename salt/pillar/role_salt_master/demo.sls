@@ -12,7 +12,7 @@ engines_dirs:
 engines:
   dispatchapong:
     alert_mapping:
-      ntpq.associations.low_sns: cloudntp.reset_minion_ntp
+      zk.followers.low: zkpong.srvr
     aws_region: us-east-2
     it_failed: "Oh no, that failed :scream:"
     it_worked: "On your way :+1:"
