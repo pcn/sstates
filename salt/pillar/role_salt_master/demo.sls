@@ -13,7 +13,7 @@ engines:
   dispatchapong:
     alert_mapping:
       ntpq.associations.low_sns: cloudntp.reset_minion_ntp
-    aws_region: us-west-2
+    aws_region: us-east-2
     it_failed: "Oh no, that failed :scream:"
     it_worked: "On your way :+1:"
     log_follow_url: https://papertrailapp.com/systems/saltmaster/events
