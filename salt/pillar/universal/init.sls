@@ -5,7 +5,7 @@ syslog_ng:
   destination: logs7.papertrailapp.com
   watched_files:
     - filename: /var/log/salt/minion
-      short_name: minion
+      shortname: minion
 
 appoptics:
   email: "something"
