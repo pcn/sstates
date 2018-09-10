@@ -29,7 +29,17 @@ def srvr_3(minion_id, slack_webhook_url=None, **kwargs):
     client = salt.client.LocalClient()
     logging.info("Showing zk srvr status")
     srvr_result = client.cmd('zk*', 'zk.srvr', [])
-    for zk in srvr_result.items():
-        print zk
-    return (srvr_result,)
+    
+    for minion_id, data in srvr_result.items().sorted():
+        # Only act on one node per alert
+        if not data['result']:
+            # restart zookeeper
+            remedy_result = client.cmd(minion_id, 'service.restart', ['zookeeper'])
+            salt.utils.http.query(url=slack_webhook, method='POST',
+                                  data=json.dumps({"text": remedy_result}))
+            salt.utils.http.query(url=slack_webhook, method='POST',
+                                  data=json.dumps({"text": "sleeping for 10 seconds to slow things down"}))
+            time.sleep(10)
+    srvr_result2 = client.cmd('zk*', 'zk.srvr', [])
+    return (srvr_result2,)
     
