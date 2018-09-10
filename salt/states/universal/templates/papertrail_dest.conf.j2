@@ -3,5 +3,5 @@ template t_papertrail {
 };
 
 destination d_papertrail {
-  tcp("{{ syslog_ng_destination }}" port({{ syslog_ng_port }}) template(t_papertrail) tls(ca_dir("/etc/syslog-ng/cert.d")) );
+  tcp("{{ salt['pillar.get']('syslog_ng:destination') }}" port({{ salt['pillar.get']('syslog_ng:port') }}) template(t_papertrail) tls(ca_dir("/etc/syslog-ng/cert.d")) );
 };

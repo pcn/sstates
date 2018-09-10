@@ -1,5 +1,9 @@
 # Something something here
 
+syslog_ng:
+  port: 27377
+  destination: logs7.papertrailapp.com
+
 appoptics:
   email: "something"
   repo_url: 'https://packagecloud.io/AppOptics'

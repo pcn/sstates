@@ -20,8 +20,6 @@ curl https://papertrailapp.com/tools/papertrail-bundle.tar.gz | tar xzf -:
     - user: root
     - group: root
     - mode: 0444
-    - syslog_ng_destination: {{ salt['pillar.get']('syslog_ng:destination') }}
-    - syslog_ng_port: {{ salt['pillar.get']('syslog_ng:port') }}
 
 /etc/syslog-ng/conf.d/papertrail_log.conf:
   file.managed:
