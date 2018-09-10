@@ -37,7 +37,7 @@ def srvr_3(minion_id, slack_webhook_url=None, **kwargs):
             # restart zookeeper
             remedy_result = client.cmd(minion_id, 'service.restart', ['zookeeper'])
             slackres = salt.utils.http.query(
-                url=slack_webhook_url, method='POST', data=json.dumps({"text": "Restarted zookeeper - result is `{}`".format(str(remedy_result)})))
+                url=slack_webhook_url, method='POST', data=json.dumps({"text": "Restarted zookeeper - result is `{}`".format(str(remedy_result))}))
             log.info("Sending a message to slack, result is: {}".format(slackres))
             slackres = salt.utils.http.query(
                 url=slack_webhook_url, method='POST', data=json.dumps({"text": "After remediating, sleeping for 10 seconds"}))
