@@ -64,4 +64,7 @@ def srvr(zkminions="zk*", full=False):
 
     # result = cmdrun(cmd, python_shell=True)
     
-    return _sendsrvr()
+    result = _sendsrvr()
+    if full:
+        return result
+    return "\n".join([z for z in result.split("\n") if 'Zoo' in resline or 'Mode' in resline])
