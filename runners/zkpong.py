@@ -26,6 +26,7 @@ def srvr_2(minion_id, slack_webhook_url=None, **kwargs):
     return (srvr_result,)
 
 def srvr_3(minion_id, slack_webhook_url=None, **kwargs):
+    """In the real world, we would add some paranoia so we don't restart the master"""
     client = salt.client.LocalClient()
     logging.info("Showing zk srvr status")
     srvr_result = client.cmd('zk*', 'zk.srvr', [])
