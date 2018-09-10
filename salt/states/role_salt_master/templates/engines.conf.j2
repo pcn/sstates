@@ -1,0 +1,4 @@
+engines_dirs: {{ salt['pillar.get']('engines_dirs') | yaml}}
+
+engines:
+  {{ salt['pillar.get']('engines') | yaml(false) }}
