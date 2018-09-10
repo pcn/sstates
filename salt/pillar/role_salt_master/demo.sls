@@ -8,7 +8,8 @@ syslog_ng:
 
 engines_dirs:
   - /srv/formulas/dispatchapong-formula/engines
-  
+
+# Remember to re-run role_salt_master.engines after changing anything here
 engines:
   dispatchapong:
     alert_mapping:
