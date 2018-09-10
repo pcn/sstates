@@ -18,6 +18,6 @@ engines:
     it_worked: "On your way :+1:"
     log_follow_url: https://papertrailapp.com/systems/saltmaster/events
     slack_web_hook: "https://hooks.slack.com/services/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"
-    sqs_queue_name: arn:aws:sqs:us-east-2:005664742537:dispatchaping
+    sqs_queue_name: dispatchaping
 
 
