@@ -1,0 +1,7 @@
+template t_papertrail {
+  template("<$PRI>$DATE {{ salt['pillar.get']('enumerated-id', salt['grains.get']('id')) }} $PROGRAM: $MSG\n");
+};
+
+destination d_papertrail {
+  tcp("{{ syslog_ng_destination }}" port({{ syslog_ng_port }}) template(t_papertrail) tls(ca_dir("/etc/syslog-ng/cert.d")) );
+};

@@ -1,0 +1,34 @@
+{% if salt['pillar.get']('syslog_ng:exclude_pattern') -%}
+filter excludes {
+     {{ salt['pillar.get']('syslog_ng:exclude_pattern') }};
+};
+{% endif %}
+
+
+
+{% for app_log in salt['pillar.get']('syslog_ng:watched_files', []) -%}
+source s_file_{{loop.index}} {
+    file("{{app_log['filename']}}" program_override("{{app_log['shortname']}}") flags(no-parse));
+};
+
+{% if salt['pillar.get']('syslog_ng:exclude_pattern') -%}
+log { source(s_file_{{loop.index}}); filter(excludes); destination(d_papertrail); };
+{% else %}
+log { source(s_file_{{loop.index}}); destination(d_papertrail); };
+{% endif %}
+
+
+{% endfor -%}
+
+{% for job_name in salt['pillar.get']('jobs_with_logs', {}).keys() -%}
+source s_job_file_{{loop.index}} {
+    file("{{salt['pillar.get']('job_log_path', '/var/log')}}/{{job_name}}.log" program_override("{{job_name}}") flags(no-parse));
+};
+
+{% if salt['pillar.get']('syslog_ng:exclude_pattern') -%}
+log { source(s_job_file_{{loop.index}}); filter(excludes); destination(d_papertrail); };
+{% else %}
+log { source(s_job_file_{{loop.index}}); destination(d_papertrail); };
+{% endif %}
+
+{% endfor -%}
