@@ -31,7 +31,7 @@ def srvr_3(minion_id, slack_webhook_url=None, **kwargs):
     logging.info("Showing zk srvr status")
     srvr_result = client.cmd('zk*', 'zk.srvr', [])
     
-    for minion_id, data in srvr_result.items().sorted():
+    for minion_id, data in sorted(srvr_result.items()):
         # Only act on one node per alert
         if not data['result']:
             # restart zookeeper
