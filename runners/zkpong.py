@@ -13,18 +13,22 @@ import salt.client
 log = logging.getLogger(__name__)
 
 
+# XXX FIX THIS SO IT FAILS SINCE IT QUERIES THE LEADER
 def srvr_1(minion_id, slack_webhook_url=None, **kwargs):
     client = salt.client.LocalClient()
     logging.info("Showing zk srvr status")
     srvr_result = client.cmd(minion_id, 'zk.srvr', [])
     return (srvr_result,)
 
-
+# XXX FIX THIS SO IT FAILS SINCE IT'S PASSING
 def srvr_2(minion_id, slack_webhook_url=None, **kwargs):
     client = salt.client.LocalClient()
     logging.info("Showing zk srvr status")
     srvr_result = client.cmd('zk*', 'zk.srvr', [])
+    log.warn("srvr_2: result is {}".format(srvr_result))
     return (srvr_result,)
+
+
 
 def srvr_3(minion_id, slack_webhook_url=None, **kwargs):
     """In the real world, we would add some paranoia so we don't restart the leader"""
